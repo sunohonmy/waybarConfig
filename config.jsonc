@@ -1,0 +1,121 @@
+// -*- mode: jsonc -*-
+{
+    "layer": "bottom", // Waybar at top layer
+    "position": "top", // Waybar position (top|bottom|left|right)
+    "height": 30, // Waybar height (to be removed for auto height)
+    "mode": "dock",
+    "modifier-reset":"release",
+    // "width": 1280, // Waybar width
+    "spacing": 4, // Gaps between modules (4px)
+    // Choose the order of the modules
+    "modules-left": [
+        "custom/rootMenu",
+        "wlr/taskbar",
+        "hyprland/window"
+    ],
+    "modules-center": [
+        "hyprland/workspaces"
+    ],
+    "modules-right": [
+        "pulseaudio",
+        //"network",
+        "power-profiles-daemon",
+        "cpu",
+        "memory",
+        "clock",
+        "custom/clipboard",
+        "tray"
+    ],
+    "custom/rootMenu": {
+        "format": "{}",
+        //"tooltip-format": "Menu",
+        "tooltip": false,
+        "on-click": "rofi -show drun -show-icons",
+        "on-click-right": "rofi -show run -show-icons",
+        "on-click-middle": "rofi -show power-menu -modi power-menu:rofi-power-menu"
+    },
+    "hyprland/workspaces": {
+	"format": "{icon}",
+	"format-icons": {
+		"active": "",
+		"default": "",
+        "empty": ""
+	},
+       "persistent-workspaces": {
+             "*": 10 // 5 workspaces by default on every monitor
+       }
+    },
+    "wlr/taskbar": {
+        "format": "{icon}",
+        "icon-size": 16,
+        "tooltip-format": "{name}",
+        "tooltip": true,
+        "on-click": "minimize-raise",
+        "on-click-middle": "close"
+    },
+    "tray": {
+        "icon-size": 16,
+        "spacing": 10
+    },
+    "clock": {
+        "timezone": "Australia/Perth",
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+        "format-alt": "{:%d-%m-%Y}"
+    },
+    "cpu": {
+        "format": "{usage}% ",
+        "tooltip": false
+    },
+    "memory": {
+        "format": "{}% "
+    },
+    "power-profiles-daemon": {
+      "format": "{icon}",
+      "tooltip-format": "Power profile: {profile}\nDriver: {driver}",
+      "tooltip": true,
+      "format-icons": {
+        "default": "",
+        "performance": "",
+        "balanced": "",
+        "power-saver": ""
+        }
+    },
+    // "network": {
+    //     // "interface": "wlp2*", // (Optional) To force the use of this interface
+    //     "format-wifi": "{signalStrength}% ",
+    //     "format-ethernet": "󰖟",
+    //     "format-linked": "{ifname} (No IP)",
+    //     "tooltip-format-wifi": "{essid}: {bandwidthUpBytes}/{bandwidthDownBytes}",
+    //     "tooltip-format-ethernet": "{ifname}: {bandwidthUpBytes}/{bandwidthDownBytes}",
+    //     "format-disconnected": "⚠"
+    // },
+    "pulseaudio": {
+        // "scroll-step": 1, // %, can be a float
+        "format": "{volume}% {icon}  {format_source}",
+        "format-bluetooth": "{volume}% {icon} {format_source}",
+        "format-bluetooth-muted": " {icon} {format_source}",
+        "format-muted": " {format_source}",
+        "format-source": "{volume}% ",
+        "format-source-muted": "",
+        "format-icons": {
+            "headphone": "",
+            "hands-free": "",
+            "headset": "",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": ["", "", ""]
+        },
+        "on-click": "pavucontrol"
+    },
+    "custom/clipboard": {
+        "format": " {icon} ",
+        "tooltip-format": "Left: Select from clipboard\nRight: Delete from clipboard\nMiddle: Wipe clipboard",
+        "tooltip": true,
+        "format-icons": ["󰅌"],
+        //"icon-size":24,
+        "on-click": "cliphist list | rofi -dmenu | cliphist decode | wl-copy",
+        "on-click-right": "cliphist list | rofi -dmenu | cliphist delete",
+        "on-click-middle": "cliphist wipe"
+    }
+}
