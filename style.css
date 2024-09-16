@@ -82,13 +82,13 @@ tooltip label {
 
 #custom-rootMenu{
     background-color: rgba(67, 73, 87, 0.5);
-    border: 2px solid cyan;
+    border: 2px solid #5100ff;
     padding: 0 10px;
 }
 
 #taskbar{
     background-color: rgba(67, 73, 87, 0.5);
-    border: 2px solid cyan;
+    border: 2px solid #5100ff;
     /* border-width: 2px;
     border-color: white; */
     padding: 0 10px;
@@ -101,7 +101,7 @@ tooltip label {
 
 #window{
     background-color: rgba(67, 73, 87, 0.5);
-    border: 2px solid cyan;
+    border: 2px solid #5100ff;
     padding: 0 10px;
 }
 window#waybar.empty #window {
@@ -112,42 +112,42 @@ window#waybar.empty #window {
 
 #cpu{
     background-color: rgba(67, 73, 87, 0.5);
-    border: 2px solid cyan;
+    border: 2px solid #5100ff;
     padding: 0 10px;
 }
 
 #memory{
     background-color: rgba(67, 73, 87, 0.5);
-    border: 2px solid cyan;
+    border: 2px solid #5100ff;
     padding: 0 10px;
 }
 
 #pulseaudio{
     background-color: rgba(67, 73, 87, 0.5);
-    border: 2px solid cyan;
+    border: 2px solid #5100ff;
     padding: 0 10px;
 }
 
 #power-profiles-daemon{
     background-color: rgba(67, 73, 87, 0.5);
-    border: 2px solid cyan;
+    border: 2px solid #5100ff;
     padding: 0 10px;
 }
 
 #clock {
     background-color: rgba(67, 73, 87, 0.5);
-    border: 2px solid cyan;
+    border: 2px solid #5100ff;
     padding: 0 10px;
 }
 
 #custom-clipboard{
     background-color: rgba(67, 73, 87, 0.5);
-    border: 2px solid cyan;
+    border: 2px solid #5100ff;
     padding: 0 10px;
 }
 
 #tray{
     background-color: rgba(67, 73, 87, 0.5);
-    border: 2px solid cyan;
+    border: 2px solid #5100ff;
     padding: 0 10px;
 }
