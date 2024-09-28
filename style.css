@@ -12,7 +12,7 @@ window#waybar {
     border-radius: 0px;
     /*border-bottom: 3px solid rgba(100, 114, 125, 0.5);*/
     color: white;
-    margin: 2px 1px 0px 1px;
+    margin: 2px 0px 0px 0px;
 }
 /*-----module groups----*/
 .modules-right {
