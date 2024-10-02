@@ -43,7 +43,7 @@
         "empty": ""
 	},
        "persistent-workspaces": {
-             "*": 10 // 5 workspaces by default on every monitor
+             "*": 10 // 10 workspaces by default on every monitor
        }
     },
     "wlr/taskbar": {
