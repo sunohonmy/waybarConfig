@@ -64,8 +64,10 @@ tooltip label {
 }
 
 #workspaces {
-    background-color: transparent; 
+    background-color: rgba(67, 73, 87, 0.5);
+    border: 2px solid #1E1F29; 
     margin: 0 4px;
+    padding: 5px 10px 0 10px;
 }
 
 #workspaces button {
@@ -115,17 +117,39 @@ window#waybar.empty #window {
     color: #2a5c45;
 }
 
-#cpu{
+#custom-hardware{
     background-color: rgba(67, 73, 87, 0.5);
     border: 2px solid #1E1F29;
     padding: 0 10px;
 }
 
+#group-hardware hardware-stats{
+    background-color: rgba(67, 73, 87, 0.5);
+    border: 2px solid #1E1F29;
+    padding: 0 10px;
+}
+
+#group-hardware{
+    background-color: rgba(67, 73, 87, 0.5);
+    border: 2px solid #1E1F29;
+    padding: 0 10px;
+}
+
+
+#cpu, #memory{
+    background-color: rgba(67, 73, 87, 0.5);
+    border: 2px solid #1E1F29;
+    padding: 0 10px;
+}
+
+
+/*
 #memory{
     background-color: rgba(67, 73, 87, 0.5);
     border: 2px solid #1E1F29;
     padding: 0 10px;
 }
+*/
 
 #pulseaudio{
     background-color: rgba(67, 73, 87, 0.5);

@@ -21,8 +21,9 @@
         "pulseaudio",
         //"network",
         "power-profiles-daemon",
-        "cpu",
-        "memory",
+        "group/hardware",
+        //"cpu",
+        //"memory",
         "clock",
         "custom/clipboard",
         "tray"
@@ -36,14 +37,14 @@
         "on-click-middle": "rofi -show power-menu -modi power-menu:rofi-power-menu"
     },
     "hyprland/workspaces": {
-	"format": "{icon}",
-	"format-icons": {
-		"active": "",
-		"default": "",
+	    "format": "{icon}",
+	    "format-icons": {
+		  "active": "",
+		  "default": "",
         "empty": ""
-	},
+	    },
        "persistent-workspaces": {
-             "*": 10 // 10 workspaces by default on every monitor
+             "DP-1": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10] // 10 workspaces by default on every monitor
        }
     },
     "wlr/taskbar": {
@@ -54,40 +55,34 @@
         "on-click": "minimize-raise",
         "on-click-middle": "close"
     },
-    // "mpd": {
-    // "format": "{stateIcon} {consumeIcon}{randomIcon}{repeatIcon}{singleIcon}{artist} - {album} - {title} ({elapsedTime:%M:%S}/{totalTime:%M:%S}) ",
-    // "format-disconnected": "Disconnected ",
-    // "format-stopped": "{consumeIcon}{randomIcon}{repeatIcon}{singleIcon}Stopped ",
-    // "interval": 10,
-    // "consume-icons": {
-    //     "on": " " // Icon shows only when "consume" is on
-    // },
-    // "random-icons": {
-    //     "off": "<span color=\"#f53c3c\"></span> ", // Icon grayed out when "random" is off
-    //     "on": " "
-    // },
-    // "repeat-icons": {
-    //     "on": " "
-    // },
-    // "single-icons": {
-    //     "on": "1 "
-    // },
-    // "state-icons": {
-    //     "paused": "",
-    //     "playing": ""
-    // },
-    // "tooltip-format": "MPD (connected)",
-    // "tooltip-format-disconnected": "MPD (disconnected)"
-    // },
+
     "tray": {
         "icon-size": 16,
         "spacing": 10
     },
+
     "clock": {
         "timezone": "Australia/Perth",
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+        "format": "{:%H:%M} ",
         "format-alt": "{:%d-%m-%Y}"
     },
+
+    "group/hardware": {
+      "orientation": "inherit",
+      "modules": ["custom/hardware","cpu", "memory"],
+      "drawer": {
+        "transition-duration": 500,
+        "children-class": "hardware-stats"
+      }
+    },
+
+    "custom/hardware": {
+      "format": "{}",
+      "on-click": "missioncenter",
+      "tooltip": false
+    },
+
     "cpu": {
         "format": "{usage}% ",
         "tooltip": false
